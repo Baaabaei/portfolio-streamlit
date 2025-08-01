@@ -1,8 +1,4 @@
 import streamlit as st
-import plotly.express as px
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
-import pandas as pd
 
 # Page configuration
 st.set_page_config(
@@ -180,28 +176,7 @@ elif selected_section == "Skills":
     st.subheader("🎯 Soft Skills")
     soft_skills = ["Problem Solving", "Creativity", "Negotiation", "Critical Thinking", "Management Skills"]
     
-    # Create a radar chart for soft skills
-    fig = go.Figure()
-    
-    fig.add_trace(go.Scatterpolar(
-        r=[9, 10, 8, 9, 8],  # Skill levels (out of 10)
-        theta=soft_skills,
-        fill='toself',
-        name='Skill Level',
-        line_color='#667eea'
-    ))
-    
-    fig.update_layout(
-        polar=dict(
-            radialaxis=dict(visible=True, range=[0, 10])
-        ),
-        showlegend=False,
-        title="Soft Skills Assessment",
-        height=400
-    )
-    
-    st.plotly_chart(fig, use_container_width=True)
-
+   
 elif selected_section == "Projects":
     st.markdown('<h2 class="section-header">🚀 Projects & Experience</h2>', unsafe_allow_html=True)
     
